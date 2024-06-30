@@ -18,6 +18,11 @@
     </div>
 
     <div class="col-sm-8 mb-3">
+      <%= form.label :author, class: "form-label" %>
+      <%= form.collection_select :author_id, Author.order(:last_name), :id, :full_name_reversed, { include_blank: 'Seleccione' },  class: "form-select"  %>
+    </div>
+
+    <div class="col-sm-8 mb-3">
       <%= form.label :number, class: "form-label" %>
       <%= form.number_field :number, class: "form-control" %>
     </div>
@@ -29,7 +34,7 @@
 
     <div class="col-sm-8 mb-3">
       <%= form.label :material, class: "form-label" %>
-      <%= form.collection_select :material_id, Material.order(:name), :id, :name, class: "form-control" %>
+      <%= form.collection_select :material_id, Material.order(:name), :id, :name, { include_blank: 'Seleccione' },  class: "form-select" %>
     </div>
 
     <div class="col-sm-8 mb-3">

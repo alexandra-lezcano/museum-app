@@ -16,6 +16,9 @@ es:
       deparment:
         one: "Departamento"
         other: "Departamentos"
+      author:
+        one: "Autor"
+        other: "Autores"
     attributes:
       museum_registration_request:
         museum_name: "Nombre del museo"
@@ -66,6 +69,7 @@ es:
       piece:
         name: "Nombre"
         number: "Número"
+        author: "Autor"
         description: "Descripción"
         material: "Material"
         measurement: "Medidas"
@@ -81,3 +85,6 @@ es:
         name: "Nombre"
       city:
         name: "Nombre"
+      author:
+        first_name: "Nombre"
+        last_name: "Apellido"

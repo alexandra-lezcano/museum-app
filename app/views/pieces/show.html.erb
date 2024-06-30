@@ -52,6 +52,13 @@
     <div class="col">
       <p class="fs-5"><%= t(".details") %></p>
       <ul class="list-unstyled">
+        <% if @piece.author %>
+          <li>
+            <strong><%= t(".author") %>: </strong>
+            <%= @piece.author.full_name %>
+          </li>
+        <% end %>
+
         <% if owner_or_admin %>
           <li>
             <strong><%= Piece.human_attribute_name("number") %>: </strong>
@@ -62,10 +69,13 @@
             <%= @piece.conservation_state %>
           </li>
         <% end %>
-        <li>
-          <strong><%= t(".material") %>: </strong>
-          <%= @piece.material.name %>
-        </li>
+
+        <% if @piece.material %>
+          <li>
+            <strong><%= t(".material") %>: </strong>
+            <%= @piece.material.name %>
+          </li>
+        <% end %>
         <li>
           <strong><%= Piece.human_attribute_name("measurement") %>: </strong>
           <%= @piece.measurement %>

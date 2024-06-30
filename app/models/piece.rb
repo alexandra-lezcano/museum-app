@@ -4,7 +4,8 @@ class Piece < ApplicationRecord
   ARCHIVED = 2
 
   belongs_to :piece_collection
-  belongs_to :material
+  belongs_to :material, optional: true
+  belongs_to :author, optional: true
   validates_presence_of :name
 
   enum :status, { hidden: NOT_PUBLISHED, published: PUBLISHED, archived: ARCHIVED}, default: :hidden

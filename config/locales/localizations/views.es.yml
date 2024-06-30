@@ -70,8 +70,23 @@ es:
     show:
       details: "Detalles"
       material: "Material"
+      author: "Autor"
     edit:
       title: "Editar pieza"
     new:
       title: "Nueva pieza"
+  authors:
+    index:
+      title: "Autores"
+      actions: "Acciones"
+      new: "Crear Autor"
+      pieces: "Piezas"
+    new:
+      title: "Nuevo Autor"
+    edit:
+      title: "Editar Autor"
+    show:
+      title: "Autor"
+      delete: "Eliminar Autor"
+      pieces: "Piezas"
 

@@ -1,0 +1,41 @@
+<div class="d-flex bd-highlight align-items-center">
+  <div class="p-2 flex-grow-1 bd-highlight">
+    <%= link_to "", root_path, class: "bi bi-arrow-left icon_back" %>
+  </div>
+</div>
+<div class="d-flex bd-highlight align-items-left">
+  <div class="p-2 flex-grow-1 bd-highlight">
+    <h2> <%= t(".title") %> </h2>
+  </div>
+  <div class="p-2 bd-highlight">
+    <%= link_to t(".new"), new_author_path, class: "btn btn-outline-secondary" %>
+  </div>
+</div>
+
+<div class="table-responsive mt-3">
+  <table class="table">
+    <thead class="table-light align-middle">
+    <tr>
+      <th scope="col"> <%= Author.human_attribute_name("first_name") %> </th>
+      <th scope="col"> <%= Author.human_attribute_name("last_name") %> </th>
+      <th scope="col"> <%= t(".pieces") %> </th>
+      <th scope="col"> <%= t(".actions") %> </th>
+    </tr>
+    </thead>
+    <tbody class="align-middle">
+    <% @authors.each do |author| %>
+      <tr id="">
+        <td> <%= author.first_name %>  </td>
+        <td> <%= author.last_name %>  </td>
+        <td> <%= author.pieces.count %>  </td>
+        <td>
+          <div class="btn-group">
+            <%= link_to "", author, class: "btn btn-outline-secondary btn-sm bi bi-eye-fill" %>
+            <%= link_to "", edit_author_path(author), class: "btn btn-outline-secondary btn-sm bi bi-pencil-fill" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

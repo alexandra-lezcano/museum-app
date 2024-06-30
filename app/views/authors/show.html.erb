@@ -1,0 +1,34 @@
+<div class="d-flex bd-highlight align-items-center">
+  <div class="p-2 flex-grow-1 bd-highlight">
+    <%= link_to "", authors_path, class: "bi bi-arrow-left icon_back" %>
+  </div>
+</div>
+<div class="d-flex bd-highlight align-items-center">
+  <div class="p-2 flex-grow-1 bd-highlight">
+    <h2><%= t(".title") %> </h2>
+  </div>
+  <div class="p-2 bd-highlight">
+    <%= link_to "", edit_author_path(@author), class: "bi bi-pencil-fill icon_edit" %>
+  </div>
+  <div class="p-2 bd-highlight">
+    <%= button_to t(".delete"), @author, method: :delete, class: "btn btn-outline-danger", form: { data: { turbo_confirm: "Estas seguro?" } } %>
+  </div>
+</div>
+
+<div class="d-flex bd-highlight align-items-center">
+  <ul id="<%= dom_id @author %>" class="list-unstyled">
+    <li>
+      <strong> <%= Author.human_attribute_name("first_name") %>:</strong>
+      <%= @author.first_name %>
+    </li>
+
+    <li>
+      <strong><%= Author.human_attribute_name("last_name") %>:</strong>
+      <%= @author.last_name %>
+    </li>
+
+    <li><strong><%= t(".pieces") %>:</strong>
+      <%= @author.pieces.count %>
+    </li>
+  </ul>
+</div>
