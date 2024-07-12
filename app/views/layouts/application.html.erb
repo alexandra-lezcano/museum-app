@@ -14,46 +14,53 @@
 <% user_signed_in = user_signed_in? %>
 <% admin = current_user&.admin? ? true : false %>
 
-<div class="container">
-  <header class="py-3 mb-4 border-bottom">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <%= link_to t('global.menu.home'), root_path, class: "d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none fs-4" %>
-
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><%= link_to t('global.menu.museums_list'), museums_path, class: "nav-link px-2 link-dark" %></li>
-          <li><%= link_to "Registrar Museo", new_museum_registration_request_path, class: "nav-link px-2 link-dark" %></li>
-          <% if admin %>
-            <li><%= link_to t('global.menu.registrations_request_list'), museum_registration_requests_path, class: "nav-link px-2 link-dark" %></li>
-            <li><% link_to t('global.menu.users_list'), users_path, class: "nav-link px-2 link-dark" %></li>
-          <% end %>
-        </ul>
-
-        <% if user_signed_in %>
-          <div class="dropdown text-end">
-            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-            </a>
-            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-              <li><%= link_to t('global.menu.profile'), edit_user_registration_path, class: "dropdown-item" %></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li>
-                <%= button_to t('global.menu.log_out'), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </li>
-            </ul>
-          </div>
-          <% else %>
-          <%= link_to t('devise.shared.links.sign_in'), new_user_session_path, class: "nav-link px-2 link-dark" %>
+<header class="py-3 mb-4 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <%= link_to t('global.menu.home'), root_path, class: "d-flex align-items-center mb-2 mb-lg-0 me-lg-3 text-dark text-decoration-none fs-4" %>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li> <%= link_to t('global.menu.museums_list'), museums_path, class: "nav-link px-2 link-dark" %> </li>
+        <% if admin %>
+          <li>
+            <div class="dropdown text-end">
+              <a href="#" class="nav-link px-2 link-dark text-decoration-none dropdown-toggle" id="mainDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Administrar
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="mainDropdown">
+                <li> <%= link_to t('global.menu.users_list'), users_path, class: "dropdown-item" %> </li>
+                <li> <hr class="dropdown-divider"> </li>
+                <li> <%= link_to t('global.menu.registrations_request_list'), museum_registration_requests_path, class: "dropdown-item" %> </li>
+                <li> <hr class="dropdown-divider"> </li>
+                <li> <%= link_to "Autores", authors_path, class: "dropdown-item" %> </li>
+                <li> <%= link_to "Materiales", materials_path, class: "dropdown-item" %> </li>
+              </ul>
+            </div>
+          </li>
         <% end %>
-      </div>
+      </ul>
+
+      <% if user_signed_in %>
+        <%= link_to "Registrar Museo", new_museum_registration_request_path, class: "btn btn-secondary mb-3 mb-lg-0 me-lg-3" %>
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+            <li><%= link_to t('global.menu.profile'), edit_user_registration_path, class: "dropdown-item" %></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <%= button_to t('global.menu.log_out'), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </li>
+          </ul>
+        </div>
+      <% else %>
+        <%= link_to t('devise.shared.links.sign_in'), new_user_session_path, class: "nav-link px-2 link-dark" %>
+      <% end %>
     </div>
-  </header>
-
-
-</div>
-
+  </div>
+</header>
 
 <div class="container">
 
