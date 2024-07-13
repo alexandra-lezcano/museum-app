@@ -79,14 +79,22 @@ es:
     index:
       title: "Autores"
       actions: "Acciones"
-      new: "Crear Autor"
+      new: "Crear autor"
       pieces: "Piezas"
     new:
-      title: "Nuevo Autor"
+      title: "Nuevo autor"
     edit:
-      title: "Editar Autor"
+      title: "Editar autor"
     show:
       title: "Autor"
-      delete: "Eliminar Autor"
+      delete: "Eliminar autor"
       pieces: "Piezas"
-
+  materials:
+    index:
+      title: "Materiales"
+      new: "Crear material"
+    edit:
+      title: "Editar material"
+    show:
+      title: "Material"
+      delete: "Eliminar"

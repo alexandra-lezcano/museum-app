@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :authors
+  resources :materials
   resources :museums do
     resources :piece_collections, shallow: true
     patch :update_museum_status, on: :member

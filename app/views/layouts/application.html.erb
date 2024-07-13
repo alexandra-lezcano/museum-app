@@ -14,7 +14,7 @@
 <% user_signed_in = user_signed_in? %>
 <% admin = current_user&.admin? ? true : false %>
 
-<header class="py-3 mb-4 border-bottom">
+<header class="py-3 mb-1 border-bottom">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <%= link_to t('global.menu.home'), root_path, class: "d-flex align-items-center mb-2 mb-lg-0 me-lg-3 text-dark text-decoration-none fs-4" %>

@@ -19,6 +19,9 @@ es:
       author:
         one: "Autor"
         other: "Autores"
+      material:
+        one: "Material"
+        other: "Materiales"
     attributes:
       museum_registration_request:
         museum_name: "Nombre del museo"
@@ -88,3 +91,5 @@ es:
       author:
         first_name: "Nombre"
         last_name: "Apellido"
+      material:
+        name: "Nombre"
