@@ -65,6 +65,7 @@ es:
         status: "Estado"
         created_at: "Creado el"
         updated_at: "Actualizado el"
+        is_permanent: "Colección permanente?"
         statuses:
           hidden: "Colección Privada"
           published: "Colección Pública"

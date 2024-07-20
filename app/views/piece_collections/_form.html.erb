@@ -12,12 +12,21 @@
     </div>
   <% end %>
 
-  <div class="col-md-6">
-    <%= form.label :name, class: "visually-hidden" %>
+  <div class="col-sm-8 mb-3">
+    <%= form.label :name, class: "form-label" %>
     <%= form.text_field :name, class: "form-control", placeholder: "Nombre" %>
   </div>
 
-  <div class="col text-end">
+  <div class="col-sm-8 mb-3">
+    <%= form.label "Colección permanente?", class: "form-label" %>
+    <%= form.label :is_permanent_true, 'Si', class: "form-label" %>
+    <%= form.radio_button :is_permanent, true %>
+
+    <%= form.label :is_permanent_false, 'No', class: "form-label" %>
+    <%= form.radio_button :is_permanent, false %>
+  </div>
+
+  <div class="col-sm-8 ">
     <%= form.submit class: "btn btn-sm btn-outline-secondary" %>
   </div>
 <% end %>

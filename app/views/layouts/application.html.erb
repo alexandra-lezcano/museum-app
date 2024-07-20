@@ -28,9 +28,13 @@
               </a>
               <ul class="dropdown-menu text-small" aria-labelledby="mainDropdown">
                 <li> <%= link_to t('global.menu.users_list'), users_path, class: "dropdown-item" %> </li>
-                <li> <hr class="dropdown-divider"> </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
                 <li> <%= link_to t('global.menu.registrations_request_list'), museum_registration_requests_path, class: "dropdown-item" %> </li>
-                <li> <hr class="dropdown-divider"> </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
                 <li> <%= link_to "Autores", authors_path, class: "dropdown-item" %> </li>
                 <li> <%= link_to "Materiales", materials_path, class: "dropdown-item" %> </li>
               </ul>
@@ -39,8 +43,9 @@
         <% end %>
       </ul>
 
+
+      <%= link_to "Registrar Museo", new_museum_registration_request_path, class: "btn btn-secondary mb-3 mb-lg-0 me-lg-3" %>
       <% if user_signed_in %>
-        <%= link_to "Registrar Museo", new_museum_registration_request_path, class: "btn btn-secondary mb-3 mb-lg-0 me-lg-3" %>
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">

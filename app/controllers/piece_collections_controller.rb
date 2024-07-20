@@ -86,7 +86,7 @@ class PieceCollectionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def piece_collection_params
-    params.require(:piece_collection).permit(:name, :status, :museum_id)
+    params.require(:piece_collection).permit(:name, :status, :is_permanent, :museum_id)
   end
 
   def authorize_user!
